@@ -304,7 +304,7 @@ hr {
     margin: 0 auto;
     margin-top: 10em;
     width: 470.24px;
-    height: 467px;
+    height: 500px;
 
 }
 
@@ -402,6 +402,16 @@ table {
 
 .form {
     margin: 0 40.34px 4px 40.34px;
+}
+
+.errForm {
+    height: 30px;
+    margin: 0 40.34px 4px 40.34px;
+}
+
+.errForm > p {
+    font-size: 10px;
+    
 }
 
 input {

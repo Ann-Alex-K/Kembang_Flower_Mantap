@@ -21,26 +21,28 @@ let todos,
 //---- validity ---//
 
 function validityName() {
-    let name = document.getElementById('input-name');
+    let name = document.getElementById('input-name'),
+        errFormName = document.querySelector('.errFormName');
+    errFormName.innerHTML = '';
     if (name.value.length >= 3) {
         return true
     } else {
-        name.value = '';
-        name.placeholder = 'Enter at least 3 characters';
+        errFormName.innerHTML = 'Name must be more than 3 characters';
     }
 }
 
 function validityNumber() {
     let number = document.getElementById('input-number');
     let numOption1 = number.value.startsWith('+7'),
-        numOption2 = number.value.startsWith('8');
+        numOption2 = number.value.startsWith('8'),
+        errFormNumber = document.querySelector('.errFormNumber');
+    errFormNumber.innerHTML = '';
     if (number.value.length == 12 && numOption1 && number.value.slice(1) == +number.value.slice(1)) {
         return true
     } else if (number.value.length == 11 && numOption2 && number.value == +number.value) {
         return true
     } else {
-        number.value = '';
-        number.placeholder = 'Number start with +7 or 8 and by at least 11 symbols';
+        errFormNumber.innerHTML = 'Number start with +7 or 8 and by at least 11 symbols';
     }
 }
 
@@ -174,6 +176,10 @@ function renderModal() {
             </div>
             <div class="form">
                 <input placeholder="Number" id="input-number" name="number"/>
+            </div>
+            <div class="errForm">
+            <p class="errFormName"></p>
+            <p class="errFormNumber"></p>
             </div>
         </form>
         <button class="modal-close" onclick="modalClose()">Cancel</button>
