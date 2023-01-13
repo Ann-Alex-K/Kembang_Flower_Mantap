@@ -6,6 +6,11 @@
     font-style: normal;
 }
 
+body {
+    margin: auto;
+    max-width: 1600px;
+}
+
 .main-wrapper {
     display: flex;
     justify-content: space-evenly;
