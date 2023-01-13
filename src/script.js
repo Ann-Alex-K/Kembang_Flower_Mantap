@@ -32,15 +32,15 @@ function validityName() {
 
 function validityNumber() {
     let number = document.getElementById('input-number');
-    let numOption1 = number.value.startsWith('+7')
-    let numOption2 = number.value.startsWith('8')
-    if (number.value.length == 12 && numOption1) {
+    let numOption1 = number.value.startsWith('+7'),
+        numOption2 = number.value.startsWith('8');
+    if (number.value.length == 12 && numOption1 && number.value.slice(1) == +number.value.slice(1)) {
         return true
-    } else if (number.value.length == 11 && numOption2) {
+    } else if (number.value.length == 11 && numOption2 && number.value == +number.value) {
         return true
     } else {
         number.value = '';
-        number.placeholder = 'Number  start with +7 or 8 and by at least 11 symbols';
+        number.placeholder = 'Number start with +7 or 8 and by at least 11 symbols';
     }
 }
 
