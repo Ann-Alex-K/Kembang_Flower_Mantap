@@ -25,6 +25,7 @@ function validityName() {
     if (name.value.length >= 3) {
         return true
     } else {
+        name.value = '';
         name.placeholder = 'Enter at least 3 characters';
     }
 }
@@ -38,6 +39,7 @@ function validityNumber() {
     } else if (number.value.length == 11 && numOption2) {
         return true
     } else {
+        number.value = '';
         number.placeholder = 'Number  start with +7 or 8 and by at least 11 symbols';
     }
 }
@@ -225,5 +227,12 @@ function modalGet() {
         renderSpinner(); // loading spinner activation
         fetchTodos();
         clearModal();
+    } else if (validityName() === true) {
+        validityNumber();
+    } else if (validityNumber() === true) {
+        validityName();
+    } else {
+        validityName();
+        validityNumber();
     }
 }
