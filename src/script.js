@@ -4,6 +4,9 @@ document.addEventListener('DOMContentLoaded', function () {
         previous = document.querySelectorAll('.previous'),
         next = document.querySelectorAll('.next'),
         slider = document.querySelector('.slider-content'),
+        changePrice = document.querySelector('.change-price'),
+        cheaperImg = document.querySelector('.cheaper-img'),
+        cheaperText = document.querySelector('.cheaper-text'),
         modal = document.querySelector('.modal');
     //open modal
     openButton.addEventListener('click', function () {
@@ -13,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function () {
         body.style.height = '100vh';
         body.style.overflowY = 'hidden';
     });
-
 
     //---- slider ---//  
     let i = 0;
@@ -38,6 +40,19 @@ document.addEventListener('DOMContentLoaded', function () {
             slider.innerHTML = sliderArr[i];
         });
     });
+
+        //---- change price icon ---// 
+        changePrice.addEventListener('click', function () {
+            if (changePrice.classList.value !== 'change-price active') {
+                changePrice.classList.add('active')
+                cheaperText.innerHTML = 'Expensive First'
+                cheaperImg.src = 'assets/Vector-14.png'
+            } else {
+                changePrice.classList.remove('active')
+                cheaperText.innerHTML = 'Cheaper First'
+                cheaperImg.src = 'assets/Vector-15.png'
+            }
+        });
 
 });
 
