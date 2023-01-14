@@ -103,6 +103,7 @@ button.open-modal {
     font-size: 24px;
     line-height: 29px;
     color: #333333;
+    cursor: pointer;
 }
 
 .main-slider-wrapper-previous>h3 {
@@ -116,6 +117,10 @@ button.open-modal {
     color: #156963;
 }
 
+.main-slider-wrapper-previous>img {
+    cursor: pointer;
+ }
+
 .main-slider-wrapper-next>span {
     width: 57px;
     height: 29px;
@@ -124,6 +129,7 @@ button.open-modal {
     font-size: 24px;
     line-height: 29px;
     color: #F2F2F2;
+    cursor: pointer;
 }
 
 .main-slider-wrapper-next>h3 {
@@ -136,6 +142,10 @@ button.open-modal {
     font-size: 32px;
     line-height: 39px;
     color: #FFFFFF;
+}
+
+.main-slider-wrapper-next>img {
+   cursor: pointer;
 }
 
 

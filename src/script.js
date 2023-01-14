@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
     const body = document.body;
     let openButton = document.querySelector('.open-modal'),
+        previous = document.querySelectorAll('.previous'),
+        next = document.querySelectorAll('.next'),
+        slider = document.querySelector('.slider-content'),
         modal = document.querySelector('.modal');
     //open modal
     openButton.addEventListener('click', function () {
@@ -10,13 +13,46 @@ document.addEventListener('DOMContentLoaded', function () {
         body.style.height = '100vh';
         body.style.overflowY = 'hidden';
     });
+
+
+    //---- slider ---//  
+    let i = 0;
+    slider.innerHTML = sliderArr[0];
+
+    next.forEach(function (item) {
+        item.addEventListener('click', function () {
+            i++;
+            if (i == sliderArr.length) {
+                i = 0;
+            }
+            slider.innerHTML = sliderArr[i];
+        });
+    });
+
+    previous.forEach(function (item) {
+        item.addEventListener('click', function () {
+            i--;
+            if (i < 0) {
+                i = sliderArr.length - 1;
+            }
+            slider.innerHTML = sliderArr[i];
+        });
+    });
+
 });
 
 
 let todos,
     searchUserId,
-    searchCompleted;
+    searchCompleted,
+    sliderArr = [];
 
+
+//---- slider content---//  
+
+sliderArr[0] = `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,`
+sliderArr[1] = `when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,`
+sliderArr[2] = `but also the leap into electronic typesetting, remaining essentially unchanged.`
 
 //---- validity ---//
 
