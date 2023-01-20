@@ -3,7 +3,7 @@
 
 ## See the interactive example of the project:
 
-https://ann-alex-k.github.io/Kembang_Flower_Mantap_with_modalWindow/
+https://ann-alex-k.github.io/Kembang_Flower_Mantap
 
 ## Main functions
 
